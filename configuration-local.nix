@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./k8s-config.nix
     ];
 
   # Bootloader.
@@ -160,6 +161,7 @@
     qemu_kvm
     dnsutils
     gh
+    git
   ];
 
   services.sabnzbd = {

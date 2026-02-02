@@ -13,13 +13,13 @@
       pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in
     {
-      # NixOS configuration
-      nixosConfigurations.seagull = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration-local.nix
-        ];
-      };
+# NixOS configuration
+  nixosConfigurations.seagull = nixpkgs.lib.nixosSystem {
+    inherit system;
+    modules = [
+      ./configuration-local.nix
+    ];
+  };
 
       # Overlays for stable package access
       overlays.default = _final: _prev: {
