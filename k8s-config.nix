@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Core K8s tools
     kubectl
-    helm
+    kubernetes-helm
     
     # Management tools you actually want
     k9s          # Terminal UI (pros love this)

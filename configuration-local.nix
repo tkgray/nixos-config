@@ -91,6 +91,8 @@
     qemu.package = pkgs.qemu_kvm;
   };
 
+  services.flatpak.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.groups.libvirt = {};
   users.users.tom = {
@@ -136,10 +138,10 @@
   };
 
   # Enable Bluetooth support
-  # hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Enable blueman for GUI Bluetooth management (recommended for KDE Plasma)
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
 
   # Enable Steam
   programs.steam = {
@@ -168,17 +170,15 @@
     gh
     git
     kdePackages.kdeconnect-kde
-    kubectl
-    kubernetes-helm
   ];
 
   programs.kdeconnect.enable = true;
 
-  services.sabnzbd = {
-    enable = true;
-    openFirewall = true; # Open the web interface port
-    allowConfigWrite = true; 
-  };
+  #  services.sabnzbd = {
+    #  enable = true;
+    #  openFirewall = true; # Open the web interface port
+    #  allowConfigWrite = true; 
+  #  };
 
   # Some programs need SUID wrappers, can be configured further or are started in user 
   # sessions. programs.mtr.enable = true; programs.gnupg.agent = {
