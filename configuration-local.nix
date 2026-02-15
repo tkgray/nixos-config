@@ -93,6 +93,15 @@
 
   services.flatpak.enable = true;
 
+    # Enable Podman
+  virtualisation.podman = {
+    enable = true;
+    dockerSocket.enable = true;
+    defaultNetwork.settings.dns_enabled = true;
+    # Enable Docker compatibility if needed
+    dockerCompat = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.groups.libvirt = {};
   users.users.tom = {
@@ -106,6 +115,7 @@
       "libvirt"
       "kvm"
       "virt-manager"
+      "podman"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -170,6 +180,7 @@
     gh
     git
     kdePackages.kdeconnect-kde
+    podman-desktop
   ];
 
   programs.kdeconnect.enable = true;
