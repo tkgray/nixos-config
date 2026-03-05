@@ -17,15 +17,15 @@
   ];
 
   # Kubectl completion
-  programs.bash.completion.enable = true;
-  programs.bash.interactiveShellInit = ''
-    source ${pkgs.kubectl}/share/bash-completion/completions/kubectl
-  '';
+#  programs.bash.completion.enable = true;
+#  programs.bash.interactiveShellInit = ''
+#    source ${pkgs.kubectl}/share/bash-completion/completions/kubectl
+#  '';
   
   # Fish shell users
-  programs.fish.interactiveShellInit = ''
-    ${pkgs.kubectl}/share/fish/vendor_completions.d/kubectl.fish
-  '';
+#  programs.fish.interactiveShellInit = ''
+#    ${pkgs.kubectl}/share/fish/vendor_completions.d/kubectl.fish
+#  '';
 
   systemd.tmpfiles.settings.kubectl_config = {
     # Create .kube directory if it doesn't exist
